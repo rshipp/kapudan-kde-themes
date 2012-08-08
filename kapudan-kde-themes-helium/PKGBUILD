@@ -1,0 +1,27 @@
+#
+# Apps Packages for Chakra, part of chakra-project.org
+# 
+# Maintainer: george <george[at]chakra-project.org>
+
+pkgname=kapudan-kde-themes-helium
+_theme=helium
+pkgver=20120808
+pkgrel=1
+pkgdesc='A pre-configured Helium KDE theme for Kapudan.'
+arch=('i686' 'x86_64')
+url=''
+screenshot=''
+license=('GPLv2')
+depends=('kapudan' 'kde-plasma-themes-helium')
+source=("${_theme}.png::${screenshot}"
+        "${_theme}.style")
+md5sums=('f50dada9df3bf65915500a914602d0c3'
+         '387f6154f4040bed01d2521e0bda27d8')
+
+package() {
+    cd "${srcdir}"
+    install -dm755 \
+        "${pkgdir}/usr/share/kde4/apps/kapudan/kapudan/kde-themes/"
+    install -Dm644 "${_theme}."{style,png} \
+        "${pkgdir}/usr/share/kde4/apps/kapudan/kapudan/kde-themes/"
+}
