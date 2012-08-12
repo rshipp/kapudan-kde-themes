@@ -1,0 +1,37 @@
+#
+# Desktop Packages for Chakra, part of chakra-project.org
+# 
+# Maintainer: george <george[at]chakra-project.org>
+
+pkgname=kapudan-kde-themes-extra
+pkgver=20120808
+pkgrel=1
+pkgdesc='A set of pre-configured KDE themes for Kapudan.'
+arch=('i686' 'x86_64')
+url='https://github.com/george2/kapudan-kde-themes'
+screenshot=
+license=('GPLv2')
+depends=('kapudan' 'kde-plasma-themes-caledonia')
+
+_web="https://raw.github.com/george2/kapudan-kde-themes/master/kapudan-kde-themes-extra"
+_themes=( "${_web}/caledonia.style" )
+_imgs=( "${_web}/caledonia.png" )
+
+source=("${_imgs[@]}"
+        "${_themes[@]}")
+md5sums=('f50dada9df3bf65915500a914602d0c3'
+         '387f6154f4040bed01d2521e0bda27d8')
+
+package() {
+    cd "${srcdir}"
+
+    install -dm755 \
+        "${pkgdir}/usr/share/kde4/apps/kapudan/kapudan/kde-themes/"
+
+    i=0; for theme in ${_themes[@]}; do
+        echo  "$(basename "${theme}")" "$(basename "${_imgs[$i]}")" 
+        install -Dm644 "$(basename "${theme}")" "$(basename "${_imgs[$i]}")" \
+            "${pkgdir}/usr/share/kde4/apps/kapudan/kapudan/kde-themes/"
+        let i=$i+1
+    done
+}
