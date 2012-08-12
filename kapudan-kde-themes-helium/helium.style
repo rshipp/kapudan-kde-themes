@@ -6,7 +6,7 @@ description = A light theme for the plasma desktop.
 description[es] = Tema Ligero para el escritorio de plasma.
 
 panelPosition = 4
-widgetStyle = helium
+widgetStyle = oxygen
 colorScheme = oxygen
 desktopTheme = helium
 thumbnail = helium.png
