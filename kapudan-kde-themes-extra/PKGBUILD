@@ -4,7 +4,7 @@
 # Maintainer: george <george[at]chakra-project.org>
 
 pkgname=kapudan-kde-themes-extra
-pkgver=20120808
+pkgver=20120812
 pkgrel=1
 pkgdesc='A set of pre-configured KDE themes for Kapudan.'
 arch=('i686' 'x86_64')
@@ -13,7 +13,7 @@ screenshot=
 license=('GPLv2')
 depends=('kapudan' 'kde-plasma-themes-caledonia')
 
-_web="https://raw.github.com/george2/kapudan-kde-themes/master/kapudan-kde-themes-extra"
+_web='https://raw.github.com/george2/kapudan-kde-themes/master/kapudan-kde-themes-extra'
 _themes=( "${_web}/caledonia.style" )
 _imgs=( "${_web}/caledonia.png" )
 
