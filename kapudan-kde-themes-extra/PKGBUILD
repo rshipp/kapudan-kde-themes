@@ -29,7 +29,6 @@ package() {
         "${pkgdir}/usr/share/kde4/apps/kapudan/kapudan/kde-themes/"
 
     i=0; for theme in ${_themes[@]}; do
-        echo  "$(basename "${theme}")" "$(basename "${_imgs[$i]}")" 
         install -Dm644 "$(basename "${theme}")" "$(basename "${_imgs[$i]}")" \
             "${pkgdir}/usr/share/kde4/apps/kapudan/kapudan/kde-themes/"
         let i=$i+1
